@@ -11,7 +11,7 @@ when 2
 end
 plugin_path = "/usr/lib64/nagios/plugins/check_#{plugintype}"
 
-# プラグインのパスをチェック
+# check plugin's path.
 while !File.exist?(plugin_path)
   puts "Error: Could not find Nagios Plugin(check_#{plugintype})."
   print "Enter the plugin path:"
@@ -19,14 +19,15 @@ while !File.exist?(plugin_path)
   plugin_path = input.chomp
 end
 
-## 共通パラメータ
+# check target host.
 target_host = ARGV[0]
 if target_host.nil?
   puts "Error: target hostname must be specified as a parameter."
-  puts "For example, \"ruby nagios-plugin-logger(v0.2).rb example.com\""
+  puts "For example, \"ruby nagios-plugin-logger.rb example.com\""
   exit(status = false)
 end
 
+# check interval value. Default: 10(seconds)
 interval = ARGV[1]
 if interval.nil?
   interval = 10

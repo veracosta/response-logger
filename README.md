@@ -15,3 +15,7 @@ Usage
 Run the script as follows.
 
 `ruby response-logger.rb example.com`
+
+You can change the interval time to run Nagios Plugin by adding time after the target hostname.
+
+`ruby response-logger.rb example.com 5`

@@ -1,4 +1,9 @@
 #!/usr/bin/ruby
+# nagios-plugin-logger
+# Copyright (c) 2014 Kotaro Kishimoto
+# This software is released under the MIT License.
+# http://opensource.org/licenses/mit-license.php
+
 sleep 1
 puts "Select the protocol with number that you want to check."
 print "\n 1) http\n 2) dns\n"
